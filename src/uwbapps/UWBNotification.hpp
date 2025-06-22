@@ -33,7 +33,7 @@ public:
             if (handlers[i].handler != nullptr && handlers[i].notification_type == notification_type) {
                 if(notification_type == uwb::NotificationType::RANGING_DATA)
                 {   
-                    
+                    UWBHAL.Log_Array_D("Ranging Data Notification", (uint8_t*)data, sizeof(uwb::RangingResult));
                     uwb::RangingResult result = *(uwb::RangingResult*)data;
                     
                     UWBRangingData rangingData(result);
