@@ -21,8 +21,8 @@ public:
 		rangingParams.rangingRoundUsage(uwb::RangingMethod::DS_TWR);
 		rangingParams.scheduledMode(uwb::ScheduledMode::TIME_SCHEDULED);
 		rangingParams.deviceMacAddr(srcAddr);
+		
 	
-			
 		appParams.noOfControlees(1);
 	    appParams.destinationMacAddr(dstAddr);	        
 		appParams.frameConfig(uwb::RfFrameConfig::SP3);
@@ -31,7 +31,7 @@ public:
 		appParams.stsConfig(uwb::StsConfig::StaticSts);
 		appParams.sfdId(2);
 		appParams.preambleCodeIndex(10);	
-		
+	
 		
 	}	
 };

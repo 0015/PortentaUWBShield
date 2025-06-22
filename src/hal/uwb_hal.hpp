@@ -54,7 +54,7 @@ public:
     virtual Status setRangingParams(uint32_t session_handle,  UWBRangingParams& params) = 0;
     virtual Status setAppConfig(uint32_t session_handle, AppConfigId param_id, uint32_t value) = 0;
     virtual Status setAppConfigMultiple(uint32_t session_handle, UWBAppParamList configs) = 0;
-    virtual Status setVendorAppConfig(uint32_t session_handle, UWBVendorParamList& configs) = 0;
+    virtual Status setVendorAppConfig(uint32_t session_handle, UWBVendorParamList configs) = 0;
 
     // Ranging control
     virtual Status startRanging(uint32_t session_handle) = 0;
