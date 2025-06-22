@@ -20,6 +20,9 @@ public:
                                                  uwb::AppParamType,
                                                  uwb::AppParamValue>() 
     
+    {
+        
+    }
     
 };
 
