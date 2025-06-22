@@ -59,7 +59,7 @@ const RangingMeasures UWBRangingData::twoWayRangingMeasure() const {
 }
 
 const RangingMesrTdoas UWBRangingData::tdoaMeasure() const {
-    return result.measurements.tdoa;
+    return (const RangingMesrTdoas) result.measurements.tdoa;
 }
 const RangingMesrDlTdoas UWBRangingData::dlTdoaMeasure() const {
     return result.measurements.dltdoa;

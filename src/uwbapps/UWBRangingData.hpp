@@ -14,9 +14,9 @@
 // using RangingMeasures = const uwb::twr_mesr (&)[uwb::MAX_RESPONDERS];
 
 using RangingMeasures = uwb::twr_mesr*;
-typedef uwb::tdoa_mesr TdoaMeasurement_[uwb::MAX_TDOA_MEASURES];
-#define RangingMesrTdoas TdoaMeasurement_&
-
+//typedef uwb::tdoa_mesr TdoaMeasurement_[uwb::MAX_TDOA_MEASURES];
+//#define RangingMesrTdoas TdoaMeasurement_&
+using RangingMesrTdoas = uwb::tdoa_mesr*;
 typedef uwb::dltdoa_mesr DlTdoaMeasurement_[uwb::MAX_TDOA_MEASURES];
 #define RangingMesrDlTdoas DlTdoaMeasurement_&
 
