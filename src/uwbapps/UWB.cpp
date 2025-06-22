@@ -45,11 +45,8 @@ void UWB_::begin(Print& printInterface, uwb::LogLevel logLevel)
     UWBHAL.setLogLevel(logLevel);
     UWBHAL.setPrintCallback(logCB);
    
-    int old = uxTaskPriorityGet(NULL);
     vTaskPrioritySet(NULL,1);
     initUWB();
-    vTaskPrioritySet(NULL,old);
-	
     
 }
 void UWB_::end(void)
