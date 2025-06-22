@@ -10,6 +10,17 @@ UWBSession::UWBSession()
     sessionHdl = 0;
     type = uwb::SessionType::RANGING;
     isActive = false;
+
+    // Initialize the ranging parameters with default antenna config
+    static uint8_t antennaeConfigurationRx[] = { 1, 0x01, (1)};
+    static const uint8_t antennaeConfigurationRx_size = 3;
+    uwb::VendorAppConfig antennaParam;
+    antennaParam.param_id = uwb::VendorAppConfigId::ANTENNAE_CONFIGURATION_RX;
+    antennaParam.param_type = uwb::AppParamType::ARRAY_U8;
+    antennaParam.param_value.au8.param_value = antennaeConfigurationRx;//&antennaeConfigurationRx[0];
+    antennaParam.param_value.au8.param_len = antennaeConfigurationRx_size;
+    vendorParams.addOrUpdateParam(antennaParam);
+    
 }
 
 
@@ -75,7 +86,7 @@ uwb::Status UWBSession::init()
         res=UWBHAL.setVendorAppConfig(sessionHdl, vendorParams);
         if(res != uwb::Status::SUCCESS)
         {
-            UWBHAL.Log_E("could not set vendor params -%d", res);
+            UWBHAL.Log_E("could not set vendor params - %d", res);
             return res;
         }
     }

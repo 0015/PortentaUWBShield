@@ -20,18 +20,6 @@ public:
                                                  uwb::AppParamType,
                                                  uwb::AppParamValue>() 
     
-    {
-        
-        uint8_t antennaeConfigurationRx[] = { 1, 0x01, (1)};
-        const uint8_t antennaeConfigurationRx_size = 3;
-        uwb::VendorAppConfig antennaParam;
-        antennaParam.param_id = uwb::VendorAppConfigId::ANTENNAE_CONFIGURATION_RX;
-        antennaParam.param_type = uwb::AppParamType::ARRAY_U8;
-        antennaParam.param_value.au8.param_value = &antennaeConfigurationRx[0];
-        antennaParam.param_value.au8.param_len = antennaeConfigurationRx_size;
-        addOrUpdateParam(antennaParam);
-        //UWBHAL.setDefaultVendorConfigs(this);
-    }
     
 };
 
