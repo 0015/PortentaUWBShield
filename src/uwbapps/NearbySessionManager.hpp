@@ -9,6 +9,7 @@
 #include <Arduino_FreeRTOS.h>
 #include "UWBSessionManager.hpp"
 #include "NearbySession.hpp"
+#include "hal/uwb_hal.hpp"
 
 class NearbySessionManager : public UWBSessionManager_ {
 public:
